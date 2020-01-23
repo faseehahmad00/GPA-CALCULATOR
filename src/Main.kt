@@ -5,7 +5,5 @@ fun main() {
     val calculator = GPACalculator()
     calculator.calculate()
     calculator.tableview()
-    calculator.getgrade()
-    println("copied from github" )
     }
 

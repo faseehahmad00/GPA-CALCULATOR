@@ -28,41 +28,43 @@ class GPACalculator {
             commgpa += creditlist[i] * gpalist[i]
         }
         gpa = commgpa / totalcredit
-
-        println("your Gpa is $gpa")
     }
 
     fun tableview() {
-        println("")
-        println("SUBJECT\t\tCREDIT HOURS\t\tGPA")
+        println("SUBJECT\t\tCREDIT HOURS\t\tGPA\t\t\t\tGRADE")
         for (i in 0..subjects) {
-            println("    " + (i + 1) + "\t\t\t " + creditlist[i] + "\t\t\t\t" + gpalist[i])
+            print("    " + (i + 1) + "\t\t\t " + creditlist[i] + "\t\t\t\t" + gpalist[i] + "\t\t\t\t" + getgrade(gpalist[i]))
         }
-        println("  " + "TOTAL" + "\t\t\t " + totalcredit + "\t\t\t\t" + gpa)
+        println("\n  " + "TOTAL" + "\t\t\t " + totalcredit + "\t\t\t\t" + gpa)
+        print("GRADE : " + getgrade(gpa) + "\nGPA : $gpa")
+
     }
 
-    fun getgrade() {
+    fun getgrade(sgpa: Float): String {
         println("")
-        if (gpa > 3.7) {
-            println("GRADE \t\t\t A+")
-        } else if (gpa >= 3.7) {
-            println("GRADE \t\t\t A-")
-        } else if (gpa >= 3.3) {
-            println("GRADE \t\t\t B+")
-        } else if (gpa >= 3.0) {
-            println("GRADE \t\t\t B")
-        } else if (gpa >= 2.7) {
-            println("GRADE \t\t\t B-")
-        } else if (gpa >= 2.3) {
-            println("GRADE \t\t\t C+")
-        } else if (gpa >= 2.0) {
-            println("GRADE \t\t\t C")
-        } else if (gpa >= 1.7) {
-            println("GRADE \t\t\t C-")
-        } else if (gpa >= 1.3) {
-            println("GRADE \t\t\t D")
-        } else if (gpa < 1.3) {
-            println("GRADE \t\t\t F")
+        if (sgpa > 3.7) {
+            return "A+"
+        } else if (sgpa >= 3.7) {
+            return "A-"
+        } else if (sgpa >= 3.3) {
+            return "B+"
+        } else if (sgpa >= 3.0) {
+            return "B"
+        } else if (sgpa >= 2.7) {
+            return "B-"
+        } else if (sgpa >= 2.3) {
+            return "C+"
+        } else if (sgpa >= 2.0) {
+            return "C"
+        } else if (sgpa >= 1.7) {
+            return "C-"
+        } else if (sgpa >= 1.3) {
+            return "D"
+        } else if (sgpa < 1.3) {
+            return "F"
+        } else {
+            return "null"
         }
     }
+
 }
