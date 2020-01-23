@@ -2,8 +2,8 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 fun main() {
-    val calculator = GPACalculator()
-    calculator.calculate()
-    calculator.tableview()
+    val GPA = GPACalculator()
+    GPA.calculate()
+    GPA.tableview()
     }
 
