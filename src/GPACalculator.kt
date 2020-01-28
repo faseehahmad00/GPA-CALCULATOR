@@ -8,9 +8,9 @@ class GPACalculator {
     var gpalist = ArrayList<Float>()
     var creditlist = ArrayList<Int>()
     var subjects = 0
-
+    val test:Float = 1.3F
     fun calculate() {
-
+        Runtime.getRuntime().exec("clear")
         var reader = Scanner(System.`in`)
         println("Enter total Subjects")
         subjects = reader.nextInt() - 1
@@ -38,32 +38,35 @@ class GPACalculator {
         println("\n  " + "TOTAL" + "\t\t\t " + totalcredit + "\t\t\t\t" + gpa)
         print("GRADE : " + getgrade(gpa) + "\nGPA : $gpa")
 
+
     }
 
-    fun getgrade(sgpa: Float): String {
+    fun getgrade(sgpa: Float): String {        //sgpa is the gpa of individual subject
         println("")
-        if (sgpa > 3.7) {
+        if (sgpa > 3.7 && sgpa <= 4.0) {
             return "A+"
-        } else if (sgpa >= 3.7) {
+        } else if (sgpa > 3.3 && sgpa <= 3.7) {
             return "A-"
-        } else if (sgpa >= 3.3) {
+        } else if (sgpa > 3.0 && sgpa <= 3.3) {
             return "B+"
-        } else if (sgpa >= 3.0) {
+        } else if (sgpa > 2.7 && sgpa <= 3.0) {
             return "B"
-        } else if (sgpa >= 2.7) {
+        } else if (sgpa > 2.3 && sgpa <= 2.7) {
             return "B-"
-        } else if (sgpa >= 2.3) {
+        } else if (sgpa > 2.0 && sgpa <= 2.3) {
             return "C+"
-        } else if (sgpa >= 2.0) {
+        } else if (sgpa > 1.7 && sgpa <= 2.0) {
             return "C"
-        } else if (sgpa >= 1.7) {
+        } else if (sgpa > 1.3 && sgpa <= 1.7) {
             return "C-"
-        } else if (sgpa >= 1.3) {
+        }
+        else if (sgpa ==test ) {
             return "D"
         } else if (sgpa < 1.3) {
             return "F"
         } else {
             return "null"
+            print("\n invalid input ..please check amd try again")
         }
     }
 
